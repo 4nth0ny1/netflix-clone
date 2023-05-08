@@ -9,6 +9,7 @@ interface InputProps {
 }
 
 const Input: React.FC<InputProps> = ({ id, onChange, value, label, type }) => {
+  const a = value.toLowerCase();
   return (
     <div className="relative">
       <input
