@@ -8,7 +8,6 @@ import GithubProvider from 'next-auth/providers/github'
 import GoogleProvider from 'next-auth/providers/google'
 
 export default NextAuth({
-  adapter: PrismaAdapter(prismadb),
     providers: [
         GithubProvider({
           clientId: process.env.GITHUB_ID || '', 
@@ -58,6 +57,7 @@ export default NextAuth({
         signIn: '/auth',
     },
     debug: process.env.NODE_ENV === 'development',
+    adapter: PrismaAdapter(prismadb),
     session: {
         strategy: 'jwt'
     },
